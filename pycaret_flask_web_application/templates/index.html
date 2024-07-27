@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Price of Diamond</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict the Price of the Diamond</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+      <input type="text" name="carat_weight" placeholder="Carat Weight" required="required" /><br>
+    	<input type="text" name="cut" placeholder="Cut (Ideal / Very Good / Good / Signature-Ideal / Fair)" required="required" /><br>
+        <input type="text" name="color" placeholder="Color (G / H / F / I /E / D)" required="required" /><br>
+        <input type="text" name="clarity" placeholder="Clarity (SI1 / VS2 / VS1 / VVS2 / VVS1 / IF / FL)" required="required" /><br>
+        <input type="text" name="polish" placeholder="Polish (EX / VG / ID / G)" required="required" /><br>
+        <input type="text" name="symmetry" placeholder="Symmetry (VG / EX / G / ID)" required="required" /><br>
+        <input type="text" name="report" placeholder="Report(GIA / AGSL)" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    <br>
+    <br>
+    {{pred}}
+ </div>
+
+
+</body>
+</html>
